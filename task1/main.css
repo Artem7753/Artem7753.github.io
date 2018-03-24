@@ -1,0 +1,30 @@
+
+.h1 {
+    font-family:serif;
+}
+
+.autor {
+    font-family: "Times new roman";
+    font-style: italic;
+}
+
+.article {
+    font-family: "Courier New",Sans-serif;
+}
+
+.q {
+    font-family: Arial;
+}
+
+.fig {
+    font-family: "Lucida Console";
+}
+
+.img {
+    width: 100%;
+}
+
+.iframe {
+    width: 560px;
+    height: 250px;
+}
