@@ -1,0 +1,39 @@
+label{
+    display: block;
+    margin: 20px;
+    position: relative;
+}
+input{
+    margin-left: 100px;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+}
+.form {
+    border-top: 2px solid black;
+}
+span{
+    display: inline-block;
+    width: 60px;
+    position: absolute;
+    top: 0px;
+}
+.message{
+    width: 230px;
+    height: 100px;
+}
+
+.wrapper {
+    width: 60%;
+    margin: 10px auto;
+}
+
+.red {
+    color: red;
+    margin: 2px;
+}
+h2{
+    margin: 0px;
+}
