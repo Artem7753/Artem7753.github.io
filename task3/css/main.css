@@ -3,13 +3,13 @@
     width: 100%;
     background: #eceef4;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     height: 63px;
 }
 
 .link_leftside {
     display: flex;
-    width: 70%;
+    width: 30%;
     list-style: none;
     margin: auto;
 }
@@ -39,7 +39,7 @@
 .link_rightside {
     list-style: none;
     display: flex;
-    width: 40%;
+    width: 20%;
     height: 100%;
     margin: auto;
 }
@@ -47,7 +47,6 @@
 .link_rightside_item {
     display: flex;
     height: 100%;
-    border-left: 1px solid rgba(183, 183, 183, 0.72);
     border-right: 1px solid rgba(183, 183, 183, 0.72);
     width: 63px;
 }
@@ -63,13 +62,14 @@
     display: flex;
     width: 100%;
     height: 200px;
+    justify-content:space-between;
 }
 
 .header_logo {
     background-image: url(../img/logo.png);
     margin: auto;
     height: 93px;
-    width: 30%;
+    width: 20%;
     display: flex;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .header_support {
-    width: 50%;
+    width: 45%;
     display: flex;
 }
 
