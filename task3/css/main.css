@@ -175,6 +175,7 @@
 
 .wrapper {
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
 }
 
 .somearts_header_span {
@@ -245,4 +246,31 @@
 
 .shadow_icon {
     margin: auto;
+}
+
+.information {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.information_article {
+    width: 45%;
+    display: flex;
+}
+
+.information_article_logo {
+    height: 100px;
+    margin: 15px;
+}
+
+.information_article_text_header {
+    display: block;
+    padding: 10px;
+    color:  #6d6e71;
+    font-size: 26px;/* Приближение из-за подстановки шрифтов */
+    font-weight: 700;
+    line-height: 24px;/* Приближение из-за подстановки шрифтов */
+    text-align: left;
 }
