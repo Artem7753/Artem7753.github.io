@@ -180,11 +180,11 @@
 
 .somearts_header_span {
     position: relative;
-    color: rgba(117, 117, 252, 0.42);
+    color: rgba(187, 237, 255, 0.62);
     font-size: 130px;
     z-index: 1;
-    left: 40px;
-    
+    left: 100px;
+    margin-right: 100px;
 }
 
 .first_str {
