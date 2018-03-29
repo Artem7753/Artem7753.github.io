@@ -15,21 +15,36 @@
                     <span class="link_leftside_item_icon">
                         <i class="far fa-list-alt"></i>
                     </span>
-                    <span class="link_leftside_item_text">Blog</span>
+                    <a class="link_leftside_item_text" href="#">Blog</a>
                     </li>
-                <li class="link_leftside_item"><span class="link_leftside_item_icon"><i class="fas fa-clipboard-list"></i></span><span class="link_leftside_item_text">Jobs</span></li>
-                <li class="link_leftside_item"><span class="link_leftside_item_icon"><i class="fas fa-bullhorn"></i></span><span class="link_leftside_item_text">Support</span></li>
-                <li class="link_leftside_item"><span class="link_leftside_item_icon"><i class="fas fa-globe"></i></span><span class="link_leftside_item_text">Arabic</span></li>
+                <li class="link_leftside_item"><span class="link_leftside_item_icon"><i class="fas fa-clipboard-list"></i></span><a class="link_leftside_item_text" href="#">Jobs</a></li>
+                <li class="link_leftside_item"><span class="link_leftside_item_icon"><i class="fas fa-bullhorn"></i></span><a class="link_leftside_item_text" href="#">Support</a></li>
+                <li class="link_leftside_item"><span class="link_leftside_item_icon"><i class="fas fa-globe"></i></span><a class="link_leftside_item_text" href="#">Arabic</a></li>
             </ul>
             <ul class="link_rightside">
-                <li class="link_rightside_item"><i class="fab fa-facebook-square link_rightside_item_icon"></i></li>
-                <li class="link_rightside_item"><i class="fab fa-twitter-square link_rightside_item_icon"></i></li>
-                <li class="link_rightside_item"><i class="fab fa-instagram link_rightside_item_icon"></i></li>
-                <li class="link_rightside_item"><i class="fab fa-google-plus-g link_rightside_item_icon"></i></li>
+                <li class="link_rightside_item"><a href="#" class="link_rightside_item_href"><i class="fab fa-facebook-square link_rightside_item_icon"></i></a></li>
+                <li class="link_rightside_item"><a href="#" class="link_rightside_item_href"><i class="fab fa-twitter-square link_rightside_item_icon"></i></a></li>
+                <li class="link_rightside_item"><a href="#" class="link_rightside_item_href"><i class="fab fa-instagram link_rightside_item_icon"></i></a></li>
+                <li class="link_rightside_item"><a href="#" class="link_rightside_item_href"><i class="fab fa-google-plus-g link_rightside_item_icon"></i></a></li>
             </ul>
         </div>
         <header class="header">
+           <div class="header_mobile_menu">
+            <label for="check">
+                <i class="fas fa-bars fa-3x"></i>
+            </label>
+            <input type="checkbox" class="mobile_checkbox" id="check">
+            <ul class="nav_menu_mobile">
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">HOME</a></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">What about ASAMA</a></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">What we do</a></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">Our Projects</a></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">Exellent Team</a></li>
+                <li class="nav_menu_item last"><a class="nav_menu_tiem_text" href="#">Contact</a></li>
+            </ul>     
+            </div>
             <div class="header_logo"><span class="header_logo_text">logo</span></div>
+            <div class="nav_menu_search_tablet"><i class="fas fa-search nav_menu_search_icon"></i><input type="text" class="nav_menu_search_input" placeholder="Type your search words"></div>
             <div class="header_support">
                 <ul class="header_support_items">
                     <li class="header_support_items_item"><i class="fas fa-phone"></i></li>
@@ -40,19 +55,19 @@
         </header>
         <nav class="nav">
             <ul class="nav_menu">
-                <li class="nav_menu_item"><span class="nav_menu_tiem_text">HOME</span></li>
-                <li class="nav_menu_item"><span class="nav_menu_tiem_text">What about ASAMA</span></li>
-                <li class="nav_menu_item"><span class="nav_menu_tiem_text">What we do</span></li>
-                <li class="nav_menu_item"><span class="nav_menu_tiem_text">Our Projects</span></li>
-                <li class="nav_menu_item"><span class="nav_menu_tiem_text">Exellent Team</span></li>
-                <li class="nav_menu_item last"><span class="nav_menu_tiem_text">Contact</span></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">HOME</a><div class='menu_item_rect'></div></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">What about ASAMA</a><div class='menu_item_rect'></div></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">What we do</a><div class='menu_item_rect'></div></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">Our Projects</a><div class='menu_item_rect'></div></li>
+                <li class="nav_menu_item"><a class="nav_menu_tiem_text" href="#">Exellent Team</a><div class='menu_item_rect'></div></li>
+                <li class="nav_menu_item last"><a class="nav_menu_tiem_text" href="#">Contact</a><div class='menu_item_rect'></div></li>
             </ul>
             <div class="nav_menu_search"><i class="fas fa-search nav_menu_search_icon"></i><input type="text" class="nav_menu_search_input" placeholder="Type your search words"></div>
         </nav>
         <section class="somearts">
             <div class="somearts_header">
-                <p class="first_str">LET`S DRAW SOME ARTS</p>
-                <p class="second_str"><span class="somearts_header_span">&</span>make your business much better</p>
+                <h2 class="first_str">LET`S DRAW SOME ARTS</h2>
+                <h3 class="second_str"><span class="somearts_header_span">&amp;</span>make your business much better</h3>
             </div>
             <div class="somearts_slider">
                 <div class="somearts_slider_image_wrapper"><img src="img/design.png" alt="" class="somearts_slider_image"><div class="shadow"><i class="far fa-heart shadow_icon"></i><span class="shadow_text">Like</span></div></div>
@@ -64,22 +79,23 @@
             <article class="information_article">
                 <img src="img/lamp.png" alt="" class="information_article_logo">
                 <div class="information_article_text">
-                    <span class="information_article_text_header">
+                    <h3 class="information_article_text_header">
                         Lorem ipsum dolor sit.
-                    </span>
+                    </h3>
                     <span class="information_article_text_text">
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis dolor dolores, recusandae quia. Nihil distinctio, quasi nobis veritatis cupiditate officia facilis, quibusdam vel ab repellendus earum, quidem aliquam delectus nam.</span><span>Nisi asperiores tempore, fugiat, ea atque cupiditate alias, dolor mollitia eligendi consequuntur porro itaque harum doloremque distinctio iusto! Quo corrupti cupiditate natus id eaque, doloribus quaerat blanditiis soluta suscipit dolorum.</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis dolor dolores, recusandae quia. Nihil distinctio, quasi nobis veritatis cupiditate officia facilis, quibusdam vel ab repellendus earum, quidem aliquam delectus nam.Nisi asperiores tempore, fugiat, ea atque cupiditate alias, dolor mollitia eligendi consequuntur porro itaque harum doloremque distinctio iusto! Quo corrupti cupiditate natus id eaque, doloribus quaerat blanditiis soluta suscipit dolorum.</p>
                     </span>
                 </div>
             </article>
             <article class="information_article">
                 <img src="img/tree.png" alt="" class="information_article_logo">
                 <div class="information_article_text">
-                    <span class="information_article_text_header">
+                    <h3 class="information_article_text_header">
                         Lorem ipsum dolor.
-                    </span>
+                    </h3>
                     <span class="information_article_text_text">
-                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia blanditiis at quae ducimus asperiores odit, quas, consequuntur placeat dolorum distinctio ex reprehenderit voluptatibus ipsa cupiditate magni repellendus molestiae iure saepe?</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia blanditiis at quae ducimus asperiores odit, quas, consequuntur placeat dolorum distinctio ex reprehenderit voluptatibus ipsa cupiditate magni repellendus molestiae iure saepe?</p>
+                    </span>
                 </div>
             </article>
         </section>
