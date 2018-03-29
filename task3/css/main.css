@@ -335,7 +335,7 @@
     background: lightblue;
     padding: 0;
 }
-@media screen and (max-width: 760px){
+@media screen and (max-device-width: 800px){
     .link{
         display: none;
     }
