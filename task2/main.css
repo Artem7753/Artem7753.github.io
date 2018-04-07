@@ -37,13 +37,17 @@ span{
 h2{
     margin: 0px;
 }
-input:invalid + .hint{
+
+input:focus + .hint{
     display: block;
 }
+
+
 input:valid + .hint {
     display: none;
 }
 .hint{
+    display: none;
     width: 100px;
     height: 20px;
     margin-left: 350px;
