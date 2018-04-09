@@ -5,6 +5,7 @@
     <title>library</title>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -18,7 +19,7 @@
     	<main class="main">
     		<aside class="aside">
     			<div class="aside_newbook">
-    				<div class="aside_newbook_add"><a href="" class="aside_newbook_add_link">Add a Book</a></div>
+    				<div class="aside_newbook_add" id="add_book"><a href="" class="aside_newbook_add_link">Add a Book</a></div>
     			</div>
     			<hr class="aside_separator">
     			<nav class="aside_menu">
@@ -67,11 +68,11 @@
     					<h2 class="content_library_title">Jewels of Nizam</h2>
     					<p class="content_library_description">by Geeta Devi</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars" class="book_stars" id="star1"><label for="star1" class="book_star_label"></label>
+    						<input type="radio" name="stars" class="book_stars" id="star2"><label for="star2" class="book_star_label"></label>
+    						<input type="radio" name="stars" class="book_stars" id="star3"><label for="star3" class="book_star_label"></label>
+    						<input type="radio" name="stars" class="book_stars" id="star4"><label for="star4" class="book_star_label"></label>
+    						<input type="radio" name="stars" class="book_stars" id="star5" checked><label for="star5" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -79,11 +80,11 @@
     					<h2 class="content_library_title">Cakes & Bakes</h2>
     					<p class="content_library_description">by Sanjeev Kapoor</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars2" class="book_stars" id="star1_2"><label for="star1_2" class="book_star_label"></label>
+    						<input type="radio" name="stars2" class="book_stars" id="star2_2"><label for="star2_2" class="book_star_label"></label>
+    						<input type="radio" name="stars2" class="book_stars" id="star3_2"><label for="star3_2" class="book_star_label"></label>
+    						<input type="radio" name="stars2" class="book_stars" id="star4_2" checked><label for="star4_2" class="book_star_label"></label>
+    						<input type="radio" name="stars2" class="book_stars" id="star5_2"><label for="star5_2" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -91,11 +92,11 @@
     					<h2 class="content_library_title">Jamie’s Kitchen</h2>
     					<p class="content_library_description">by Jamie Oliver</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars3" class="book_stars" id="star1_3"><label for="star1_3" class="book_star_label"></label>
+    						<input type="radio" name="stars3" class="book_stars" id="star2_3"><label for="star2_3" class="book_star_label"></label>
+    						<input type="radio" name="stars3" class="book_stars" id="star3_3"><label for="star3_3" class="book_star_label"></label>
+    						<input type="radio" name="stars3" class="book_stars" id="star4_3"><label for="star4_3" class="book_star_label"></label>
+    						<input type="radio" name="stars3" class="book_stars" id="star5_3" checked><label for="star5_3" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -103,11 +104,11 @@
     					<h2 class="content_library_title">Inexpensive Family Meals</h2>
     					<p class="content_library_description">by Simon Holst</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars4" class="book_stars" id="star1_4"><label for="star1_4" class="book_star_label"></label>
+    						<input type="radio" name="stars4" class="book_stars" id="star2_4"><label for="star2_4" class="book_star_label"></label>
+    						<input type="radio" name="stars4" class="book_stars" id="star3_4" checked><label for="star3_4" class="book_star_label"></label>
+    						<input type="radio" name="stars4" class="book_stars" id="star4_4"><label for="star4_4" class="book_star_label"></label>
+    						<input type="radio" name="stars4" class="book_stars" id="star5_4"><label for="star5_4" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -115,11 +116,11 @@
     					<h2 class="content_library_title">Paleo Slow Cooking</h2>
     					<p class="content_library_description">by Chrissy Gower</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars5" class="book_stars" id="star1_5"><label for="star1_5" class="book_star_label"></label>
+    						<input type="radio" name="stars5" class="book_stars" id="star2_5"><label for="star2_5" class="book_star_label"></label>
+    						<input type="radio" name="stars5" class="book_stars" id="star3_5"><label for="star3_5" class="book_star_label"></label>
+    						<input type="radio" name="stars5" class="book_stars" id="star4_5" checked><label for="star4_5" class="book_star_label"></label>
+    						<input type="radio" name="stars5" class="book_stars" id="star5_5"><label for="star5_5" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -127,11 +128,11 @@
     					<h2 class="content_library_title">Cook Like an Italian</h2>
     					<p class="content_library_description">by Tobie Puttock</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars6" class="book_stars" id="star1_6"><label for="star1_6" class="book_star_label"></label>
+    						<input type="radio" name="stars6" class="book_stars" id="star2_6"><label for="star2_6" class="book_star_label"></label>
+    						<input type="radio" name="stars6" class="book_stars" id="star3_6"><label for="star3_6" class="book_star_label"></label>
+    						<input type="radio" name="stars6" class="book_stars" id="star4_6"><label for="star4_6" class="book_star_label"></label>
+    						<input type="radio" name="stars6" class="book_stars" id="star5_6" checked><label for="star5_6" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -139,11 +140,11 @@
     					<h2 class="content_library_title">Suneeta Vaswani</h2>
     					<p class="content_library_description">by Geeta Devi</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars7" class="book_stars" id="star1_7"><label for="star1_7" class="book_star_label"></label>
+    						<input type="radio" name="stars7" class="book_stars" id="star2_7"><label for="star2_7" class="book_star_label"></label>
+    						<input type="radio" name="stars7" class="book_stars" id="star3_7"><label for="star3_7" class="book_star_label"></label>
+    						<input type="radio" name="stars7" class="book_stars" id="star4_7" checked><label for="star4_7" class="book_star_label"></label>
+    						<input type="radio" name="stars7" class="book_stars" id="star5_7"><label for="star5_7" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -151,11 +152,11 @@
     					<h2 class="content_library_title">Jamie Does</h2>
     					<p class="content_library_description">by Jamie Oliver</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars8" class="book_stars" id="star1_8" checked><label for="star1_8" class="book_star_label"></label>
+    						<input type="radio" name="stars8" class="book_stars" id="star2_8"><label for="star2_8" class="book_star_label"></label>
+    						<input type="radio" name="stars8" class="book_stars" id="star3_8"><label for="star3_8" class="book_star_label"></label>
+    						<input type="radio" name="stars8" class="book_stars" id="star4_8"><label for="star4_8" class="book_star_label"></label>
+    						<input type="radio" name="stars8" class="book_stars" id="star5_8"><label for="star5_8" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -163,11 +164,11 @@
     					<h2 class="content_library_title">Jamie’s italy</h2>
     					<p class="content_library_description">by Jamie Oliver</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars9" class="book_stars" id="star1_9"><label for="star1_9" class="book_star_label"></label>
+    						<input type="radio" name="stars9" class="book_stars" id="star2_9"><label for="star2_9" class="book_star_label"></label>
+    						<input type="radio" name="stars9" class="book_stars" id="star3_9" checked><label for="star3_9" class="book_star_label"></label>
+    						<input type="radio" name="stars9" class="book_stars" id="star4_9"><label for="star4_9" class="book_star_label"></label>
+    						<input type="radio" name="stars9" class="book_stars" id="star5_9"><label for="star5_9" class="book_star_label"></label>
     					</div>
     				</div>
     				<div class="content_library_book">
@@ -175,11 +176,11 @@
     					<h2 class="content_library_title">Vegetables Cookbook</h2>
     					<p class="content_library_description">by Matthew Biggs</p>
     					<div class="content_library_stars">
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
-    						<i class="fa fa-star" aria-hidden="true"></i>
+    						<input type="radio" name="stars10" class="book_stars" id="star1_10"><label for="star1_10" class="book_star_label"></label>
+    						<input type="radio" name="stars10" class="book_stars" id="star2_10"><label for="star2_10" class="book_star_label"></label>
+    						<input type="radio" name="stars10" class="book_stars" id="star3_10"><label for="star3_10" class="book_star_label"></label>
+    						<input type="radio" name="stars10" class="book_stars" id="star4_10"><label for="star4_10" class="book_star_label"></label>
+    						<input type="radio" name="stars10" class="book_stars" id="star5_10" checked><label for="star5_10" class="book_star_label"></label>
     					</div>
     				</div>
     			</div>
@@ -189,6 +190,13 @@
 			<i class="fa fa-question-circle footer_icons" aria-hidden="true"></i>
    			<i class="fa fa-cog footer_icons" aria-hidden="true"></i>
     	</footer>
+    </div>
+    <div id="add_new_book_form">
+        <div id="exit">X</div>
+        <label for="file">Image:</label><input type="file" id="file">
+        <label for="autor">Autor:</label><input type="text" id="autor">
+        <label for="describe">Description:</label><input type="text" id="describe"><br>
+        <input type="submit">
     </div>
 </body>
 </html>

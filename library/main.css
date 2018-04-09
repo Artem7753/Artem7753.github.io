@@ -270,8 +270,8 @@ body{
 	justify-content:space-around;
 }
 .content_library_book{
-	width: 18%;
-	margin-top: 1em;
+    margin: 0.3em;
+    margin-top: 1em;
 }
 .content_library_title{
 	font-family: ProximaNova;
@@ -289,9 +289,13 @@ body{
 	font-weight: 400;
 	line-height: 26px;/* Приближение из-за подстановки шрифтов */
 	margin: 0;
+    width: 15em;
 }
 .content_library_stars{
 	color:  #ffab00;
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content: flex-end;
 }
 .header_support_item img{
 	display: block;
@@ -314,4 +318,37 @@ body{
 }
 .footer_icons:nth-of-type(1){
 	background: #1f2637;
+}
+.book_star_label::after{
+    content:"\f006";
+    font-family: FontAwesome;
+}
+.book_stars:checked ~ .book_star_label::after{
+    content:"\f005";
+    font-family: FontAwesome;
+}
+.book_stars{
+    display: none;
+}
+#add_new_book_form{
+    width: 20%;
+    margin: auto;
+    padding: 3em;
+    background: rgba(24, 30, 44, 0.86);
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    color: white;
+    display: none;
+}
+#add_new_book_form input{
+    display: block;
+}
+#exit{
+    color: white;
+    background: red;
+    padding: 0.5em 1em 0.5em 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
