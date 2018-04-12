@@ -75,6 +75,9 @@ body{
 	background: #f2795a;
 	border-radius: 5px;
 }
+.aside_newbook_add:hover{
+	cursor: pointer;
+}
 .aside_newbook_add_link{
 	display: block;
 	text-decoration: none;
