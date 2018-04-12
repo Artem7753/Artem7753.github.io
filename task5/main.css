@@ -1,0 +1,10 @@
+#wrapper{
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+#inside{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
