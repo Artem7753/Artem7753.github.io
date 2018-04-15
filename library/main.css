@@ -247,6 +247,9 @@ body{
 	padding: 0.5em;
 	border-radius: 10px;
 }
+.content_bar_item_link:hover{
+	cursor: pointer;
+}
 .content_bar_item{
 	padding: 1em;
 }
@@ -271,6 +274,7 @@ body{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content:space-around;
+
 }
 .content_library_book{
     margin: 0.3em;

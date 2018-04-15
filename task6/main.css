@@ -1,0 +1,9 @@
+
+.block_title {
+	background: green;
+	border: 4px solid blue;
+}
+
+.block_body {
+	display: none;
+}
