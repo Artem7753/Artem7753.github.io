@@ -19,7 +19,7 @@ search.addEventListener("keyup",function(){
 	for(var i = 0;i<books.length;i++){
 		books.item(i).style.display = "none";
 	}
-	var regExp = new RegExp("^" + search.value, "i");
+	var regExp = new RegExp(search.value, "i");
 	for(var i = 0;i<books.length;i++){
 		if(regExp.test(books.item(i).childNodes.item(3).innerHTML)){
 			books.item(i).style.display = "block";
