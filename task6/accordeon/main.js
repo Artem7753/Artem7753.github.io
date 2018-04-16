@@ -7,9 +7,11 @@ accordeon.addEventListener("click",function(event){
 });
 
 var openBody = function(node){
-	if(selected){
-		selected.nextElementSibling.style.display = "none";
-	}
-	selected = node;
-	selected.nextElementSibling.style.display = "block";
+		if(selected){
+			if(selected.tagName == "P"){
+				selected.nextElementSibling.style.display = "none";
+			}
+		}
+		selected = node;
+		selected.nextElementSibling.style.display = "list-item";
 }

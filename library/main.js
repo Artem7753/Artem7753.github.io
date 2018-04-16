@@ -29,6 +29,10 @@ search.addEventListener("keyup",function(){
 
 var mostPopular = document.getElementById("most_popular");
 mostPopular.addEventListener("click",function(){
+	allBooks.style.background = "";
+	allBooks.style.color = "grey";
+	mostPopular.style.background = "grey";
+	mostPopular.style.color = "white";
 	var books = document.getElementsByClassName("content_library_book");
 	for(var i = 0;i<books.length;i++){
 		if(!books.item(i).childNodes.item(7).childNodes.item(1).checked)
@@ -37,6 +41,10 @@ mostPopular.addEventListener("click",function(){
 })
 var allBooks = document.getElementById("all_books");
 allBooks.addEventListener("click",function(){
+	allBooks.style.background = "grey";
+	allBooks.style.color = "white";
+	mostPopular.style.background = "";
+	mostPopular.style.color = "grey";
 	var books = document.getElementsByClassName("content_library_book");
 	for(var i = 0;i<books.length;i++){
 		books.item(i).style.display = "block";

@@ -29,6 +29,7 @@ function getRandomColor() {
 var dragObj;
 body.addEventListener("mousedown", function(event){
 	dragObj = event.target;
+	dragObj.style.zIndex = 1000;
 	var coords = getCoords(dragObj);
   	var shiftX = event.pageX - coords.left;
   	var shiftY = event.pageY - coords.top;
@@ -45,6 +46,8 @@ body.addEventListener("mousedown", function(event){
   };
 
   dragObj.onmouseup = function() {
+	  dragObj.style.zIndex = 1;
+	 console.log("отжата");
     document.onmousemove = null;
     dragObj.onmouseup = null;
   };
