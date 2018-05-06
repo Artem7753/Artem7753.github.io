@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>library</title>
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../main.css">
+    <script src="../main.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+    	<header class="header">
+    		<ul class="header_support">
+    			<li class="header_support_item"><a href="" class="header_support_item_link">Help Center</a></li>
+    			<li class="header_support_item"><a href="" class="header_support_item_link">Our Support</a></li>
+    			<li class="header_support_item"><img src="img/avatar-01.png" alt=""><a href="" class="header_support_item_link">John Doe</a></li>
+    		</ul>
+    	</header>
+    	<main class="main">
+    		<aside class="aside">
+    			<div class="aside_newbook">
+    				<div class="aside_newbook_add" id="add_book"><span class="aside_newbook_add_link">Add a Book</span></div>
+    			</div>
+    			<hr class="aside_separator">
+    			<nav class="aside_menu">
+    				<ul class="aside_menu_ul">
+    					<li class="aside_menu_item"><a href="" class="aside_menu_item_link">Now Reading</a></li>
+    					<li class="aside_menu_item"><a href="" class="aside_menu_item_link">Browse</a></li>
+    					<li class="aside_menu_item"><a href="" class="aside_menu_item_link">Buy Books</a></li>
+    					<li class="aside_menu_item"><a href="" class="aside_menu_item_link">Favourite Books</a></li>
+    					<li class="aside_menu_item"><a href="" class="aside_menu_item_link">Wishlist</a></li>
+    					<li class="aside_menu_item"><a href="" class="aside_menu_item_link">History</a></li>
+    				</ul>
+    			</nav>
+    			<hr class="aside_separator">
+    			<div class="aside_markers">
+    				<ul class="aside_markers_ul">
+    					<li class="aside_markers_item"><a href="" class="aside_markers_item_link">Must Read Titles</a></li>
+    					<li class="aside_markers_item"><a href="" class="aside_markers_item_link">Best Of List</a></li>
+    					<li class="aside_markers_item"><a href="" class="aside_markers_item_link">Classic Novels</a></li>
+    					<li class="aside_markers_item"><a href="" class="aside_markers_item_link">Non Fiction</a></li>
+    				</ul>
+    			</div>
+    			<hr class="aside_separator">
+    			<div class="additional-information">
+    				<div class="additional-information_post">You added <span>Fight Club</span> by <span>Chuck Palahniuk</span> to your <span>Must Read Titles</span>.
+    				<p class="aside_was-ago">24 minutes ago</p>
+    				</div>
+    				<div class="additional-information_post">You added <span>The Trial</span> by <span>Franz Kafka</span> to your <span>Must Read Titles</span>.
+    				<p class="aside_was-ago">48 minutes ago</p>
+    				</div>
+    			</div>
+    		</aside>
+    		<div class="content">
+    			<h1 class="content_header">Browse Available Books</h1>
+    			<div class="content_bar">
+    				<ul class="content_bar_ul">
+    					<li class="content_bar_item"><span class="content_bar_item_link" id="all_books">All Books</span></li>
+    					<li class="content_bar_item"><span class="content_bar_item_link">Most Recent</span></li>
+    					<li class="content_bar_item"><span class="content_bar_item_link" id="most_popular">Most Popular</span></li>
+    					<li class="content_bar_item"><span class="content_bar_item_link">Free Books</span></li>
+    				</ul>
+    				<input type="text" class="content_bar_search" placeholder="Enter Keywords"><i class="fa fa-search search_icon" aria-hidden="true"></i>
+    			</div>
+    			<div class="content_library">
+                    <% for(var i = 0; i < books.length; i++){ %>
+    				<div class="content_library_book">   
+    					<img src='<%= books[i].image %>' alt="" class="content_library_poster">
+    					<h2 class="content_library_title"><%= books[i].name %></h2>
+    					<p class="content_library_description"><%= books[i].description %></p>
+    					<div class="content_library_stars">
+                            <% for(var j = 1; j <= 5; j++){ 
+                                    if(books[i].rating == (6-j)){ %>
+                            
+                            <input type="radio" name="<%= 'stars'+(i+1)%>" class="book_stars" id="<%= 'star'+(i+1)+'_'+j%>" checked><label for="<%= 'star'+(i+1)+'_'+j%>" class="book_star_label"></label>
+                                     <%} else {%>
+                            <input type="radio" name="<%= 'stars'+(i+1)%>" class="book_stars" id="<%= 'star'+(i+1)+'_'+j%>"><label for="<%= 'star'+(i+1)+'_'+j%>" class="book_star_label"></label>
+                                    <%} %>
+    						
+                            <%} %>
+    					</div>
+                    </div>
+                    <%} %>
+    				
+    			</div>
+    		</div>
+    	</main>
+    	<footer class="footer">
+			<i class="fa fa-question-circle footer_icons" aria-hidden="true"></i>
+   			<i class="fa fa-cog footer_icons" aria-hidden="true"></i>
+    	</footer>
+    </div>
+    <div id="add_new_book_form">
+        <div id="exit">X</div>
+        <label for="file">Image:</label><input type="file" id="file">
+        <label for="autor">Autor:</label><input type="text" id="autor">
+        <label for="describe">Description:</label><input type="text" id="describe"><br>
+        <input type="submit">
+    </div>
+</body>
+</html>
