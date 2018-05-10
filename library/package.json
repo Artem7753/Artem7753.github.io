@@ -1,12 +1,13 @@
 {
   "name": "library",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "nodemon" : "1.17.4",
+    "body-parser" : "1.18.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,5 +16,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
