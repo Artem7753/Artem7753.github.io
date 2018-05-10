@@ -5,7 +5,9 @@
     <title>library</title>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="main.css">
-    <script src="main.js" defer></script>
+	<script src="main.js" defer></script>
+	<script src="../ajax.js" defer></script>
+	<script src="../jquery.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -63,126 +65,20 @@
     				<input type="text" class="content_bar_search" placeholder="Enter Keywords"><i class="fa fa-search search_icon" aria-hidden="true"></i>
     			</div>
     			<div class="content_library">
-    				<div class="content_library_book">
-    					<img src="img/book-cover.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Jewels of Nizam</h2>
-    					<p class="content_library_description">by Geeta Devi</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars" class="book_stars" id="star1" checked><label for="star1" class="book_star_label"></label>
-    						<input type="radio" name="stars" class="book_stars" id="star2"><label for="star2" class="book_star_label"></label>
-    						<input type="radio" name="stars" class="book_stars" id="star3"><label for="star3" class="book_star_label"></label>
-    						<input type="radio" name="stars" class="book_stars" id="star4"><label for="star4" class="book_star_label"></label>
-    						<input type="radio" name="stars" class="book_stars" id="star5"><label for="star5" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover2.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Cakes & Bakes</h2>
-    					<p class="content_library_description">by Sanjeev Kapoor</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars2" class="book_stars" id="star1_2"><label for="star1_2" class="book_star_label"></label>
-    						<input type="radio" name="stars2" class="book_stars" id="star2_2"><label for="star2_2" class="book_star_label"></label>
-    						<input type="radio" name="stars2" class="book_stars" id="star3_2"><label for="star3_2" class="book_star_label"></label>
-    						<input type="radio" name="stars2" class="book_stars" id="star4_2" checked><label for="star4_2" class="book_star_label"></label>
-    						<input type="radio" name="stars2" class="book_stars" id="star5_2"><label for="star5_2" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover3.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Jamie’s Kitchen</h2>
-    					<p class="content_library_description">by Jamie Oliver</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars3" class="book_stars" id="star1_3"><label for="star1_3" class="book_star_label"></label>
-    						<input type="radio" name="stars3" class="book_stars" id="star2_3"><label for="star2_3" class="book_star_label"></label>
-    						<input type="radio" name="stars3" class="book_stars" id="star3_3"><label for="star3_3" class="book_star_label"></label>
-    						<input type="radio" name="stars3" class="book_stars" id="star4_3"><label for="star4_3" class="book_star_label"></label>
-    						<input type="radio" name="stars3" class="book_stars" id="star5_3" checked><label for="star5_3" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover4.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Inexpensive Family Meals</h2>
-    					<p class="content_library_description">by Simon Holst</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars4" class="book_stars" id="star1_4"><label for="star1_4" class="book_star_label"></label>
-    						<input type="radio" name="stars4" class="book_stars" id="star2_4"><label for="star2_4" class="book_star_label"></label>
-    						<input type="radio" name="stars4" class="book_stars" id="star3_4" checked><label for="star3_4" class="book_star_label"></label>
-    						<input type="radio" name="stars4" class="book_stars" id="star4_4"><label for="star4_4" class="book_star_label"></label>
-    						<input type="radio" name="stars4" class="book_stars" id="star5_4"><label for="star5_4" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover5.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Paleo Slow Cooking</h2>
-    					<p class="content_library_description">by Chrissy Gower</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars5" class="book_stars" id="star1_5"><label for="star1_5" class="book_star_label"></label>
-    						<input type="radio" name="stars5" class="book_stars" id="star2_5"><label for="star2_5" class="book_star_label"></label>
-    						<input type="radio" name="stars5" class="book_stars" id="star3_5"><label for="star3_5" class="book_star_label"></label>
-    						<input type="radio" name="stars5" class="book_stars" id="star4_5" checked><label for="star4_5" class="book_star_label"></label>
-    						<input type="radio" name="stars5" class="book_stars" id="star5_5"><label for="star5_5" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover6.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Cook Like an Italian</h2>
-    					<p class="content_library_description">by Tobie Puttock</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars6" class="book_stars" id="star1_6"><label for="star1_6" class="book_star_label"></label>
-    						<input type="radio" name="stars6" class="book_stars" id="star2_6"><label for="star2_6" class="book_star_label"></label>
-    						<input type="radio" name="stars6" class="book_stars" id="star3_6"><label for="star3_6" class="book_star_label"></label>
-    						<input type="radio" name="stars6" class="book_stars" id="star4_6"><label for="star4_6" class="book_star_label"></label>
-    						<input type="radio" name="stars6" class="book_stars" id="star5_6" checked><label for="star5_6" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover7.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Suneeta Vaswani</h2>
-    					<p class="content_library_description">by Geeta Devi</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars7" class="book_stars" id="star1_7"><label for="star1_7" class="book_star_label"></label>
-    						<input type="radio" name="stars7" class="book_stars" id="star2_7"><label for="star2_7" class="book_star_label"></label>
-    						<input type="radio" name="stars7" class="book_stars" id="star3_7"><label for="star3_7" class="book_star_label"></label>
-    						<input type="radio" name="stars7" class="book_stars" id="star4_7" checked><label for="star4_7" class="book_star_label"></label>
-    						<input type="radio" name="stars7" class="book_stars" id="star5_7"><label for="star5_7" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover8.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Jamie Does</h2>
-    					<p class="content_library_description">by Jamie Oliver</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars8" class="book_stars" id="star1_8" checked><label for="star1_8" class="book_star_label"></label>
-    						<input type="radio" name="stars8" class="book_stars" id="star2_8"><label for="star2_8" class="book_star_label"></label>
-    						<input type="radio" name="stars8" class="book_stars" id="star3_8"><label for="star3_8" class="book_star_label"></label>
-    						<input type="radio" name="stars8" class="book_stars" id="star4_8"><label for="star4_8" class="book_star_label"></label>
-    						<input type="radio" name="stars8" class="book_stars" id="star5_8"><label for="star5_8" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover9.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Jamie’s italy</h2>
-    					<p class="content_library_description">by Jamie Oliver</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars9" class="book_stars" id="star1_9"><label for="star1_9" class="book_star_label"></label>
-    						<input type="radio" name="stars9" class="book_stars" id="star2_9"><label for="star2_9" class="book_star_label"></label>
-    						<input type="radio" name="stars9" class="book_stars" id="star3_9" checked><label for="star3_9" class="book_star_label"></label>
-    						<input type="radio" name="stars9" class="book_stars" id="star4_9"><label for="star4_9" class="book_star_label"></label>
-    						<input type="radio" name="stars9" class="book_stars" id="star5_9"><label for="star5_9" class="book_star_label"></label>
-    					</div>
-    				</div>
-    				<div class="content_library_book">
-    					<img src="img/book-cover10.png" alt="" class="content_library_poster">
-    					<h2 class="content_library_title">Vegetables Cookbook</h2>
-    					<p class="content_library_description">by Matthew Biggs</p>
-    					<div class="content_library_stars">
-    						<input type="radio" name="stars10" class="book_stars" id="star1_10"><label for="star1_10" class="book_star_label"></label>
-    						<input type="radio" name="stars10" class="book_stars" id="star2_10"><label for="star2_10" class="book_star_label"></label>
-    						<input type="radio" name="stars10" class="book_stars" id="star3_10"><label for="star3_10" class="book_star_label"></label>
-    						<input type="radio" name="stars10" class="book_stars" id="star4_10"><label for="star4_10" class="book_star_label"></label>
-    						<input type="radio" name="stars10" class="book_stars" id="star5_10" checked><label for="star5_10" class="book_star_label"></label>
-    					</div>
-    				</div>
+    				<template id="book_template">
+								<div class="content_library_book">
+									<img src="img/book-cover.png" alt="" class="content_library_poster">
+									<h2 class="content_library_title">Jewels of Nizam</h2>
+									<p class="content_library_description">by Geeta Devi</p>
+									<div class="content_library_stars">
+										<input type="radio" class="book_stars"><label class="book_star_label"></label>
+										<input type="radio" class="book_stars"><label class="book_star_label"></label>
+										<input type="radio" class="book_stars"><label class="book_star_label"></label>
+										<input type="radio" class="book_stars"><label class="book_star_label"></label>
+										<input type="radio" class="book_stars"><label class="book_star_label"></label>
+									</div>
+								</div>
+					</template>
     			</div>
     		</div>
     	</main>
@@ -191,12 +87,12 @@
    			<i class="fa fa-cog footer_icons" aria-hidden="true"></i>
     	</footer>
     </div>
-    <div id="add_new_book_form">
+    <form id="add_new_book_form" method="post" action="/form">
         <div id="exit">X</div>
-        <label for="file">Image:</label><input type="file" id="file">
-        <label for="autor">Autor:</label><input type="text" id="autor">
-        <label for="describe">Description:</label><input type="text" id="describe"><br>
+        <label for="file">Image:</label><input type="file" id="file" name="imageFile">
+        <label for="autor">Autor:</label><input type="text" id="autor" name="autor">
+        <label for="describe">Description:</label><input type="text" id="describe" name="description"><br>
         <input type="submit">
-    </div>
+	</form>
 </body>
 </html>
