@@ -6,13 +6,16 @@ var app = express();
 app.set("view engine", "ejs");
 
 var connection = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "localhost",
     user: "root",
-    password: "",
-    database: "library"
+    password: "root",
+    database: "library",
+    port : 8000
 });
 
 connection.connect();
+
+
 app.use(express.static(__dirname + '/public'));
 
 connection.query('SELECT * FROM books', function (error, results, fields) {
@@ -31,9 +34,8 @@ connection.query('SELECT * FROM books', function (error, results, fields) {
         });  
     })
   });
+
 connection.end();
-
-
 
 
 
