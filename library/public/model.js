@@ -1,42 +1,3 @@
-var addButton = document.getElementById("add_book");
-var closeButton = document.getElementById("exit");
-var form = document.getElementById("add_new_book_form");
-
-window.onload = function () {
-	addButton.addEventListener("click", openForm, false);
-	closeButton.addEventListener("click", closeForm, false);
-
-	var allStars = document.getElementsByClassName('book_stars');
-	allStars = Array.from(allStars);
-
-	for (var i = 0; i < allStars.length; i++)
-		allStars[i].addEventListener("click", updateRating());
-
-	var addBookBut = document.getElementById("add_book_button");
-	addBookBut.addEventListener('click', addBook(allStars));
-
-	var deleteButton = document.getElementsByClassName("hover-block");
-	deleteButton = Array.from(deleteButton);
-	for (var i = 0; i < deleteButton.length; i++)
-	deleteButton[i].addEventListener("click", deleteBook());
-
-}
-var openForm = function () {
-	form.style.display = "block";
-}
-var closeForm = function () {
-	form.style.display = "none";
-}
-
-var searchInput = document.getElementsByClassName("content_bar_search").item(0);
-searchInput.addEventListener("keyup", searchBook());
-
-var mostPopularButton = document.getElementById("most_popular");
-mostPopularButton.addEventListener("click", getPopularBooks());
-
-var allBooksButton = document.getElementById("all_books");
-allBooksButton.addEventListener("click", getAllBooks());
-
 function searchBook() {
 	return function () {
 		clearLibrary();
@@ -45,8 +6,7 @@ function searchBook() {
 	};
 }
 
-function updateRating() {
-	return function (event) {
+function updateRating(event) {
 		var star = event.target;
 		var count = star.id;
 		count = 5 - count[count.length - 1];
@@ -58,10 +18,9 @@ function updateRating() {
 		obj = JSON.stringify(obj);
 		console.log(obj);
 		var request = new XMLHttpRequest();
-		request.open("PUT", "/books");
+		request.open("PUT", "/stars");
 		request.setRequestHeader("Content-type", "Application/json");
 		request.send(obj);
-	};
 }
 
 function addBook(allStars) {
@@ -130,3 +89,43 @@ function deleteBook() {
 	};
 }
 
+var openForm = function () {
+    form.style.display = "block";
+}
+var closeForm = function () {
+    form.style.display = "none";
+}
+
+var getTemplate = function(image, name, description, rating, i){
+    var template = document.querySelector("#book_template").content.cloneNode(true);
+                template.querySelector(".content_library_poster").src = image;
+                template.querySelector(".content_library_title").textContent = name;
+                template.querySelector(".content_library_description").textContent = description;
+                template.querySelector(".book-id").textContent = i;
+                var stars = template.querySelector(".content_library_stars").children; 
+                for(var j = 0; j<5; j++){
+                    stars[j*2].id = 'star'+(i+1)+'_'+j;
+                    stars[j*2].name = 'stars'+(i+1);
+                    stars[j*2+1].setAttribute("for", ('star'+(i+1)+'_'+j));
+                    if(rating == (5-j)){
+                        stars[j*2].setAttribute("checked", "checked");
+                    }
+                }
+                return template;
+                
+}
+
+var loadBooks = function(path){
+    $.ajax({
+        url : path,
+        success: function(data){
+            var fragment = document.createDocumentFragment();
+            data = JSON.parse(data);
+            for(var i = 0; i<data.length; i++){
+                var template = getTemplate(data[i].image, data[i].name, data[i].description, data[i].rating, data[i].id);
+                fragment.appendChild(template);
+            }
+            document.querySelector('.content_library').appendChild(fragment);
+        }
+    })
+}

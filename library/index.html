@@ -5,9 +5,13 @@
     <title>library</title>
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="main.css">
-	<script src="main.js" defer></script>
-	<script src="../ajax.js" defer></script>
 	<script src="../jquery.js"></script>
+	<script src="model.js" defer></script>
+	<script src="controller.js" defer></script>
+	<script src="view.js" defer></script>
+	<!--<script src="main.js" defer></script>
+	<script src="ajax.js" defer></script>-->
+
 </head>
 <body>
     <div class="wrapper">
@@ -67,6 +71,8 @@
     			<div class="content_library">
     				<template id="book_template">
 								<div class="content_library_book">
+									<div class="book-id"></div>
+									<div class="hover-block">X</div>
 									<img src="img/book-cover.png" alt="" class="content_library_poster">
 									<h2 class="content_library_title">Jewels of Nizam</h2>
 									<p class="content_library_description">by Geeta Devi</p>
@@ -87,12 +93,12 @@
    			<i class="fa fa-cog footer_icons" aria-hidden="true"></i>
     	</footer>
     </div>
-    <form id="add_new_book_form" method="post" action="/form">
+    <form id="add_new_book_form" method="post" action="/books">
         <div id="exit">X</div>
         <label for="file">Image:</label><input type="file" id="file" name="imageFile">
         <label for="autor">Autor:</label><input type="text" id="autor" name="autor">
         <label for="describe">Description:</label><input type="text" id="describe" name="description"><br>
-        <input type="submit">
+        <input type="submit" id="add_book_button">
 	</form>
 </body>
 </html>
