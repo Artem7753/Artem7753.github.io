@@ -65,9 +65,9 @@ pool.getConnection(function (err, connection) {
             res.redirect('/');
     });
 
-    app.put('/books', jsonparder, function (req, res) {
+    app.put('/stars', jsonparder, function (req, res) {
         var result = req.body;
-        console.log(result);
+        console.log(result.id);
         connection.query('UPDATE books SET rating = ? WHERE id = ?', [result.star, result.id], function (error, results, fields) {
             console.log(results);
             console.log(error);

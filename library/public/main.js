@@ -50,7 +50,7 @@ function updateRating() {
 		var star = event.target;
 		var count = star.id;
 		count = 5 - count[count.length - 1];
-		var idEl = star.name.split('rs')[1];
+		var idEl = star.parentNode.parentNode.childNodes[1].textContent;
 		var obj = {
 			id: idEl,
 			star: count
@@ -58,7 +58,7 @@ function updateRating() {
 		obj = JSON.stringify(obj);
 		console.log(obj);
 		var request = new XMLHttpRequest();
-		request.open("PUT", "/books");
+		request.open("PUT", "/stars");
 		request.setRequestHeader("Content-type", "Application/json");
 		request.send(obj);
 	};
@@ -106,10 +106,7 @@ function getPopularBooks() {
 		mostPopularButton.style.color = "white";
 		var library = document.getElementsByClassName('content_library').item(0);
 		var books = document.getElementsByClassName('content_library_book');
-		for (var j = 0; j < 4; j++)
-			for (var i = 0; i < books.length; i++) {
-				library.removeChild(books[i]);
-			}
+		clearLibrary();
 		loadBooks("/books?filter=most_recent");
 	};
 }
