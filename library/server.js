@@ -15,24 +15,25 @@ var pool = mysql.createPool({
     port: 8000
 });
 
-pool.getConnection(function (err, connection) {
-    app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 
-    app.get('/', function (req, res) {
-        res.sendfile("index.html");
-    });
+app.get('/', function (req, res) {
+    res.sendfile("index.html");
+});
 
 
-    app.get('/books', function (req, res) {
+app.get('/books', function (req, res) {
+    pool.getConnection(function (err, connection) {
         connection.query('SELECT * FROM books', function (error, results, fields) {
             if (error) throw error;
             const mostRecent = () => results.sort(((a, b) => a.rating > b.rating)).filter((el) => el.rating > 4);
+            const visibleBooks = () => results.filter((el) => el.visible === 1);
             const filter = req.query.filter;
             const search = req.query.search;
             var regExp = new RegExp(search, "i");
             const searchResult = () => results.sort(((a, b) => a.rating > b.rating)).filter((el) => regExp.test(el.name));
-            if(search){
+            if (search) {
                 res.send(JSON.stringify(searchResult()));
                 return;
             }
@@ -43,45 +44,80 @@ pool.getConnection(function (err, connection) {
                     break;
 
                 default:
-                    res.send(JSON.stringify(results));
+                    res.send(JSON.stringify(visibleBooks()));
                     break;
             }
 
         });
     });
-    app.post('/books', urlencodedParser, function (req, res) {
+
+});
+app.post('/books', urlencodedParser, function (req, res) {
+    pool.getConnection(function (err, connection) {
         var autor = req.body.autor;
         var description = req.body.description;
         var img = req.body.imageFile;
-        if (autor != "" && description != "" && img != "") {
+        var id = req.body.id;
+        var time = new Date();
+        var action = 'insert book';
+        console.log(time);
+        console.log("id = " + id);
+        if (autor && description && img) {
             img = "../img/" + img;
-            connection.query('INSERT INTO `books`(`name`, `description`, `image`, `rating`) VALUES (?,?,?,3)', [autor, description, img], function (error, results, fields) {
-                res.redirect('/');
-
+            connection.query('INSERT INTO `books`(`name`, `description`, `image`, `rating`, `visible`) VALUES (?,?,?,3,1)', [autor, description, img], function (error, results, fields) {
+                connection.query('INSERT INTO `lastEdit`(`id_book`, `datetime`, `action`) VALUES (?,?,?)', [id, time, action], function (error, results, fields) {
+                    res.redirect('/');
+                });
             });
+            
         }
 
         else
             res.redirect('/');
     });
+});
 
-    app.put('/stars', jsonparder, function (req, res) {
+
+app.put('/stars', jsonparder, function (req, res) {
+    pool.getConnection(function (err, connection) {
         var result = req.body;
         console.log(result.id);
+        var time = new Date();
+        var action = 'update rating';
         connection.query('UPDATE books SET rating = ? WHERE id = ?', [result.star, result.id], function (error, results, fields) {
-            console.log(results);
-            console.log(error);
+            connection.query('INSERT INTO `lastEdit`(`id_book`, `datetime`, `action`) VALUES (?,?,?)', [result.id, time, action], function (error, results, fields) {
+                res.redirect('/');
+            });
         });
     });
 
-    app.delete('/books', jsonparder, function (req, res) {
+});
+
+app.put('/books', jsonparder, function (req, res) {
+    pool.getConnection(function (err, connection) {
         var result = req.body;
         console.log(result);
-        connection.query('DELETE FROM books WHERE id = ?', [result.id], function (error, results, fields) {
-        })
-    })
+        var time = new Date();
+        var action = 'delete book';
+        connection.query('UPDATE books SET visible = 0 WHERE id = ?', [result.id], function (error, results, fields) {
+            connection.query('INSERT INTO `lastEdit`(`id_book`, `datetime`, `action`) VALUES (?,?,?)', [result.id, time, action], function (error, results, fields) {});
+        });
+        connection.release();
+    });
 
 });
+
+app.get('/history', function(req, res){
+    pool.getConnection(function(err, connection){
+        connection.query('SELECT datetime, books.name, books.description, action FROM lastEdit INNER JOIN books ON id_book = books.id ORDER BY lastEdit.id DESC LIMIT 2', function(error, results, fields){
+            res.send(JSON.stringify(results));
+        })
+    })
+})
+
+
+
+
 
 
 

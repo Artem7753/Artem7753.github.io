@@ -49,11 +49,11 @@
     			</div>
     			<hr class="aside_separator">
     			<div class="additional-information">
-    				<div class="additional-information_post">You added <span>Fight Club</span> by <span>Chuck Palahniuk</span> to your <span>Must Read Titles</span>.
-    				<p class="aside_was-ago">24 minutes ago</p>
+    				<div class="additional-information_post" id="first-edit">You <span id="action1">add book</span> <span id="name1">Fight Club</span> by <span id="autor1">Chuck Palahniuk</span>.
+    				<p class="aside_was-ago" id="time1">24 minutes ago</p>
     				</div>
-    				<div class="additional-information_post">You added <span>The Trial</span> by <span>Franz Kafka</span> to your <span>Must Read Titles</span>.
-    				<p class="aside_was-ago">48 minutes ago</p>
+    				<div class="additional-information_post" id="second-edit">You <span id="action2">delete book</span> <span id="name2">The Trial</span> by <span id="autor2">Franz Kafka</span>.
+    				<p class="aside_was-ago" id="time2">48 minutes ago</p>
     				</div>
     			</div>
     		</aside>
@@ -97,7 +97,8 @@
         <div id="exit">X</div>
         <label for="file">Image:</label><input type="file" id="file" name="imageFile">
         <label for="autor">Autor:</label><input type="text" id="autor" name="autor">
-        <label for="describe">Description:</label><input type="text" id="describe" name="description"><br>
+		<label for="describe">Description:</label><input type="text" id="describe" name="description"><br>
+		<input type="hidden" id="next_id" name="id">
         <input type="submit" id="add_book_button">
 	</form>
 </body>
